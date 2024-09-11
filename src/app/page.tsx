@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { Linkedin, Github, Mail } from "lucide-react";
 import {
