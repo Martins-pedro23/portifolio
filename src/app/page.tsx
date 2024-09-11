@@ -68,7 +68,7 @@ export default function Home() {
         </main>
       </BackgroundVideo>
 
-      <section className="flex flex-col mt-20 gap-4 w-full max-w-2xl">
+      <section className="flex flex-col mt-20 gap-4 w-full max-w-2xl p-5">
         <h2 className="text-2xl font-bold">Sobre mim</h2>
         <p className="text-md text-justify hyphens-auto">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
