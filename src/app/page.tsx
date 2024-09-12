@@ -61,7 +61,7 @@ export default function Home() {
       <BackgroundVideo
         src={background}
         style={{
-          width: "99vw",
+          width: "full",
           height: "100vh",
           objectFit: "cover",
         }}
@@ -254,16 +254,16 @@ export default function Home() {
       </section>
 
       <footer className="row-start-3 flex gap-6 flex-wrap items-center p-3 justify-center fixed bottom-0 backdrop-blur bg-[#0a0a0ab9] w-full h-20">
-        <a
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="linkedin.com/in/joão-pedro-martins-de-oliveira-969712272"
+          href="https://www.linkedin.com/in/joão-pedro-martins-de-oliveira-969712272"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Linkedin />
           Linkedin
-        </a>
-        <a
+        </Link>
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://github.com/Martins-pedro23"
           target="_blank"
@@ -271,8 +271,8 @@ export default function Home() {
         >
           <Github />
           Github
-        </a>
-        <a
+        </Link>
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="mailto:martinsdeoliveira.pedro2@gmail.com"
           target="_blank"
@@ -280,7 +280,7 @@ export default function Home() {
         >
           <Mail />
           Email
-        </a>
+        </Link>
       </footer>
     </div>
   );
