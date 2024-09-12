@@ -14,10 +14,11 @@ import {
   RedisOriginal,
   PostgresqlOriginal,
   TailwindcssOriginal,
+  PostgresqlPlain,
 } from "devicons-react";
 import background from "/videos/background.mp4";
 import BackgroundVideo from "next-video/background-video";
-import logoAgriloggi from "./public/images/logoAgriloggi.png";
+import logoAgriloggi from "./public/images/agriloggiLogo.png";
 import logoEstudeMelhor from "./public/images/logoEstudeMelhor.svg";
 import labMaker from "./public/images/LabIFMaker4.png";
 import {
@@ -85,13 +86,21 @@ export default function Home() {
             <ChevronDown
               size={60}
               color="white"
-              className="animate-move-up-and-down"
+              className="animate-move-up-and-down cursor-pointer w-20 h-16 border-2 border-white rounded-full"
+              onClick={() => {
+                const aboutMeSection = document.getElementById("about-me");
+                if (aboutMeSection) {
+                  aboutMeSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             />
           </div>
         </main>
       </BackgroundVideo>
 
-      <section className="flex flex-col mt-20 gap-4 w-full max-w-3xl p-5">
+      <div className="h-16 w-full absolute bottom-0 left-0 z-30 bg-gradient-to-b from-transparent to-[#0a0a0a] via-[#0a0a0a] "></div>
+
+      <section id="about-me" className="flex flex-col mt-20 gap-4 w-full max-w-3xl p-5">
         <h2 className="text-2xl font-bold">Sobre mim</h2>
         <p className="text-md text-justify hyphens-auto">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
@@ -116,6 +125,14 @@ export default function Home() {
               </HoverCardTrigger>
               <HoverCardContent className="w-30">
                 <p className="text-center">Next.js</p>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard>
+              <HoverCardTrigger>
+                <PostgresqlPlain size={60} color="white" />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-30">
+                <p className="text-center">PostreSQL</p>
               </HoverCardContent>
             </HoverCard>
             <HoverCard>
@@ -267,32 +284,30 @@ export default function Home() {
         </div>
 
         <h2 className="text-2xl font-bold pt-20">Idiomas</h2>
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none">
-            Inglês
-          </span>
-          <Progress
-            value={95}
-            className="w-[40vw] h-3 "
-            style={{ backgroundColor: "white" }}
-          />
-          <span className=" text-sm select-none">avançado</span>
-        </div>
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none">
-            Espanhol
-          </span>
-          <Progress
-            value={30}
-            className="w-[40vw] h-3 "
-            style={{ backgroundColor: "white" }}
-          />
-          <span className=" text-sm select-none">básico</span>
+        <div className="grid grid-cols-3  sm:grid-cols-6 gap-4 w-full items-center">
+            <span className="bg-zinc-800 px-2 py-1  rounded-md hover:bg-zinc-700 select-none text-center">
+              Inglês
+            </span>
+            <Progress
+              value={95}
+              className="w-full h-2 sm:col-span-4"
+              style={{ backgroundColor: "white" }}
+            />
+            <span className=" text-sm select-none">avançado</span>
+            <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none text-center">
+              Espanhol
+            </span>
+            <Progress
+              value={30}
+              className="w-full h-2 sm:col-span-4"
+              style={{ backgroundColor: "white" }}
+            />
+            <span className=" text-sm select-none">básico</span>
         </div>
 
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
         <div className="flex flex-wrap justify-center flex-row gap-4 mb-20">
-          <Card className="w-80 h-72 shadow-lg shadow-black hover:shadow-xl hover:shadow-black">
+          <Card className="w-80 h-72 shadow-lg hover:shadow-xl hover:shadow-zinc-600 transition-all duration-300 bg-zinc-100">
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoAgriloggi}
@@ -317,7 +332,7 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
-          <Card className="w-80 h-72 shadow-lg shadow-black">
+          <Card className="w-80 h-72 shadow-lg hover:shadow-zinc-600 transition-all duration-300 bg-zinc-100">
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoEstudeMelhor}
@@ -346,7 +361,7 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
-          <Card className="w-80 h-72 shadow-lg shadow-black">
+          <Card className="w-80 h-72 shadow-lg hover:shadow-zinc-600 transition-all duration-300 bg-zinc-100">
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={labMaker}

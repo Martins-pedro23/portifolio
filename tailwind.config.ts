@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
   	animation: {
   		'move-up-and-down': 'move-up-and-down 2s linear infinite',
-      'grow-when-hover': 'grow-when-hover 0.2s ease-in-out forwards'
+      'grow-when-hover': 'grow-when-hover 0.2 ease-in-out'
   	},
   	extend: {
   		keyframes: {
