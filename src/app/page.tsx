@@ -25,17 +25,15 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Progress } from "@/components/ui/progress";
 
 const techlogiesList = [
   "Nest.js",
-  "Nest.js",
+  "Next.js",
   "React",
   "React Native",
   "Node.js",
@@ -50,6 +48,7 @@ const techlogiesList = [
   "MongoDB",
   "PostreSQL",
   "MySQL",
+  "Redis",
 ];
 
 export default function Home() {
@@ -97,11 +96,15 @@ export default function Home() {
         <p className="text-md text-justify hyphens-auto">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
           Itapetinga. Sempre fui apaixonado por tecnologia, e comecei a
-          programar muito cedo para criar mods para o Minecraft. Atualmente,
-          estou no 4º período do curso técnico. Tenho conhecimento em várias
-          tecnologias, como React, Node.js, Next.js, TailwindCSS, entre outras.
-          Atualmente, estou focado em aprimorar minhas habilidades em Next.js,
-          Nest.js e React.
+          programar cedo para criar mods para o Minecraft. Neste processo,
+          passei por tecnologias como Python, na qual fiz um chatbot e tive que
+          aprender a mexer com linux. A vontade de querer se aprofundar e entrar
+          mais profundamente a tecnologia foi o motivo que me fez entrar no IFSP
+          no curso de Tecnico em Informática, o qual hoje, estou no 4º período.
+          Durante meu curso tive a oportunidade de conhecer varias tecnologias
+          como HTML, CSS, JavaScript, PHP, C, MySQL, MongoDB e pude aprofundar
+          meus conhecimentos em Python e Java. Atualmente, estou focado em
+          aprimorar minhas habilidades em Next.js, Nest.js e React.
         </p>
 
         <h2 className="text-2xl font-bold pt-20">Tecnologias</h2>
@@ -148,11 +151,12 @@ export default function Home() {
               </HoverCardContent>
             </HoverCard>
           </div>
-          <p className="text-center text-xs">(As que mais gosto)</p>
+          <p className="text-sm text-center">
+            As tecnologias que eu mais utilizo no momento
+          </p>
         </div>
 
         <div className="flex flex-col gap-3">
-          <p>Mas tambem sei:</p>
           <div className="flex flex-wrap gap-2">
             {techlogiesList.map((technology) => {
               return (
@@ -167,9 +171,128 @@ export default function Home() {
           </div>
         </div>
 
+        <h2 className="text-2xl font-bold pt-20">Outras habilidades</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="git"
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+            />
+            <label
+              htmlFor="git"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Git
+            </label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="docker"
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+            />
+            <label
+              htmlFor="docker"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Docker
+            </label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="scrum"
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+            />
+            <label
+              htmlFor="scrum"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Scrum
+            </label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="clean-architecture"
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+            />
+            <label
+              htmlFor="clean-architecture"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Arquitetura de MVC
+            </label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="solid"
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+            />
+            <label
+              htmlFor="solid"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Arquitetura SOLID
+            </label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+              id="clean-architecture"
+            />
+            <label
+              htmlFor="clean-architecture"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Clean Architecture
+            </label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              checked={true}
+              style={{ backgroundColor: "green", pointerEvents: "none" }}
+              id="clean-code"
+            />
+            <label
+              htmlFor="clean-code"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Clean Code
+            </label>
+          </div>
+        </div>
+
+        <h2 className="text-2xl font-bold pt-20">Idiomas</h2>
+        <div className="flex flex-wrap gap-2 items-center">
+          <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none">
+            Inglês
+          </span>
+          <Progress
+            value={95}
+            className="w-[40vw] h-3 "
+            style={{ backgroundColor: "white" }}
+          />
+          <span className=" text-sm select-none">avançado</span>
+        </div>
+        <div className="flex flex-wrap gap-2 items-center">
+          <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none">
+            Espanhol
+          </span>
+          <Progress
+            value={30}
+            className="w-[40vw] h-3 "
+            style={{ backgroundColor: "white" }}
+          />
+          <span className=" text-sm select-none">básico</span>
+        </div>
+
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
         <div className="flex flex-wrap justify-center flex-row gap-4 mb-20">
-          <Card className="w-80 h-72 shadow-lg shadow-black">
+          <Card className="w-80 h-72 shadow-lg shadow-black hover:shadow-xl hover:shadow-black">
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoAgriloggi}
@@ -243,7 +366,9 @@ export default function Home() {
                 className="flex items-center gap-2"
               >
                 <Link2 />
-                <p className="text-xl text-center w-full font-bold">Lab Maker</p>
+                <p className="text-xl text-center w-full font-bold">
+                  Lab Maker
+                </p>
               </Link>
             </CardFooter>
           </Card>
