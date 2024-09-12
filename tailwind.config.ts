@@ -10,7 +10,8 @@ const config: Config = {
 
   theme: {
   	animation: {
-  		'move-up-and-down': 'move-up-and-down 2s linear infinite'
+  		'move-up-and-down': 'move-up-and-down 2s linear infinite',
+      'grow-when-hover': 'grow-when-hover 0.2s ease-in-out forwards'
   	},
   	extend: {
   		keyframes: {
@@ -24,7 +25,15 @@ const config: Config = {
   				'100%': {
   					transform: 'translateY(0)'
   				}
-  			}
+  			},
+        'grow-when-hover': {
+          '0%': {
+            transform: 'scale(1)'
+          },
+          '100%': {
+            transform: 'scale(1.1)'
+          }
+        }
   		},
   		colors: {
   			background: 'var(--background)',

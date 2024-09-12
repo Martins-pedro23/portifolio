@@ -1,16 +1,40 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
-import { Linkedin, Github, Mail, ChevronDown } from "lucide-react";
+import { Linkedin, Github, Mail, ChevronDown, Link2 } from "lucide-react";
 import {
   NextjsPlain,
   NestjsOriginal,
   JavaPlain,
   ReactOriginal,
   NodejsOriginal,
+  NuxtjsOriginal,
+  MongodbOriginal,
+  JavascriptOriginal,
+  RedisOriginal,
+  PostgresqlOriginal,
+  TailwindcssOriginal,
 } from "devicons-react";
 import background from "/videos/background.mp4";
 import BackgroundVideo from "next-video/background-video";
+import logoAgriloggi from "./public/images/logoAgriloggi.png";
+import logoEstudeMelhor from "./public/images/logoEstudeMelhor.svg";
+import labMaker from "./public/images/LabIFMaker4.png";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Image from "next/image";
+import Link from "next/link";
 
 const techlogiesList = [
   "Nest.js",
@@ -57,18 +81,21 @@ export default function Home() {
                   "",
                   500,
                 ]}
-                wrapper="h1"
                 repeat={Infinity}
               />
             </p>
           </div>
           <div className="flex flex-col gap-4 items-center w-full justify-start">
-            <ChevronDown size={60} color="white" className="animate-move-up-and-down" />
+            <ChevronDown
+              size={60}
+              color="white"
+              className="animate-move-up-and-down"
+            />
           </div>
         </main>
       </BackgroundVideo>
 
-      <section className="flex flex-col mt-20 gap-4 w-full max-w-2xl p-5">
+      <section className="flex flex-col mt-20 gap-4 w-full max-w-3xl p-5">
         <h2 className="text-2xl font-bold">Sobre mim</h2>
         <p className="text-md text-justify hyphens-auto">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
@@ -83,11 +110,46 @@ export default function Home() {
         <h2 className="text-2xl font-bold pt-20">Tecnologias</h2>
         <div className="flex justify-center flex-col">
           <div className="flex items-center justify-center gap-4 my-4">
-            <NextjsPlain size={60} color="white" />
-            <ReactOriginal size={60} color="white" />
-            <NestjsOriginal color="white" size={60} />
-            <JavaPlain color="white" size={60} />
-            <NodejsOriginal color="white" size={60} />
+            <HoverCard>
+              <HoverCardTrigger>
+                <NextjsPlain size={60} color="white" />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-30">
+                <p className="text-center">Next.js</p>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard>
+              <HoverCardTrigger>
+                <ReactOriginal size={60} color="white" />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-30">
+                <p className="text-center">React</p>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard>
+              <HoverCardTrigger>
+                <NestjsOriginal color="white" size={60} />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-30">
+                <p className="text-center">Nest.js</p>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard>
+              <HoverCardTrigger>
+                <JavaPlain color="white" size={60} />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-30">
+                <p className="text-center">Java</p>
+              </HoverCardContent>
+            </HoverCard>
+            <HoverCard>
+              <HoverCardTrigger>
+                <NodejsOriginal color="white" size={60} />
+              </HoverCardTrigger>
+              <HoverCardContent className="w-30">
+                <p className="text-center">Node.js</p>
+              </HoverCardContent>
+            </HoverCard>
           </div>
           <p className="text-center text-xs">(As que mais gosto)</p>
         </div>
@@ -98,7 +160,7 @@ export default function Home() {
             {techlogiesList.map((technology) => {
               return (
                 <span
-                  className="bg-zinc-800 px-2 py-1 rounded-md"
+                  className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none"
                   key={technology}
                 >
                   {technology}
@@ -109,14 +171,85 @@ export default function Home() {
         </div>
 
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
-        <div className="flex flex-col gap-4 mb-20">
-          <div className="flex flex-col gap-2">
-            <h3 className="text-xl font-bold">Projeto 1</h3>
-            <p className="text-md text-justify hyphens-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates, doloremque.
-            </p>
-          </div>
+        <div className="flex flex-wrap justify-center flex-row gap-4 mb-20">
+          <Card className="w-80 h-72 shadow-lg shadow-black">
+            <CardContent className="flex items-center justify-center pt-10">
+              <Image
+                src={logoAgriloggi}
+                alt="Agriloggi"
+                className="w-full h-full object-cover"
+              />
+            </CardContent>
+            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-4">
+              <div className="flex flex-row gap-2">
+                <NuxtjsOriginal size={30} color="white" />
+                <MongodbOriginal size={30} color="white" />
+                <JavascriptOriginal size={30} color="white" />
+                <NodejsOriginal size={30} color="white" />
+              </div>
+              <Link
+                href="https://agriloggi.com.br"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
+                <Link2 />
+                <p className="text-xl text-center font-bold">Agriloggi</p>
+              </Link>
+            </CardFooter>
+          </Card>
+          <Card className="w-80 h-72 shadow-lg shadow-black">
+            <CardContent className="flex items-center justify-center pt-10">
+              <Image
+                src={logoEstudeMelhor}
+                alt="Estude Melhor"
+                className="w-24 h-24 object-cover"
+              />
+            </CardContent>
+            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-5">
+              <div className="flex flex-row gap-2">
+                <ReactOriginal size={30} color="white" />
+                <NextjsPlain size={30} color="black" />
+                <NestjsOriginal size={30} color="white" />
+                <PostgresqlOriginal size={30} color="white" />
+                <RedisOriginal size={30} color="white" />
+                <TailwindcssOriginal size={30} color="white" />
+              </div>
+              <Link
+                href="https://www.estudemelhor.org/"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
+                <Link2 />
+                <p className="text-xl text-center w-full font-bold">
+                  Estude Melhor
+                </p>
+              </Link>
+            </CardFooter>
+          </Card>
+          <Card className="w-80 h-72 shadow-lg shadow-black">
+            <CardContent className="flex items-center justify-center pt-10">
+              <Image
+                src={labMaker}
+                alt="Lab Maker"
+                className="w-full h-full object-cover"
+              />
+            </CardContent>
+            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-5">
+              <div className="flex flex-row gap-2">
+                <ReactOriginal size={30} color="white" />
+                <NextjsPlain size={30} color="black" />
+                <TailwindcssOriginal size={30} color="white" />
+              </div>
+              <Link
+                href="https://front-lab-if-maker-user.vercel.app/"
+                target="_blank"
+                className="flex items-center gap-2"
+              >
+                <Link2 />
+                <p className="text-xl text-center w-full font-bold">Lab Maker</p>
+              </Link>
+            </CardFooter>
+          </Card>
         </div>
       </section>
 
