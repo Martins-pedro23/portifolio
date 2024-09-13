@@ -103,7 +103,7 @@ export default function Home() {
       >
       
         <h2 className="text-2xl font-bold">Sobre mim</h2>
-        <p className="text-md text-justify hyphens-auto shadow-xl">
+        <p className="text-md text-justify hyphens-auto drop-shadow-xl">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
           Itapetinga. Sempre fui apaixonado por tecnologia, e comecei a
           programar cedo para criar mods para o Minecraft. Neste processo,
