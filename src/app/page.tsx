@@ -119,7 +119,7 @@ export default function Home() {
 
         <h2 className="text-2xl font-bold pt-20">Tecnologias</h2>
         <div className="flex justify-center flex-col">
-          <div className="flex flex-wrap items-center justify-center gap-4 my-4">
+          <div className="grid grid-cols-3 sm:flex sm:flex-wrap items-center sm:justify-center justify-items-center gap-4 my-4 mx-5 sm:mx-0">
             <NextjsPlain size={60} color="white" />
 
             <PostgresqlPlain size={60} color="white" />
@@ -271,7 +271,9 @@ export default function Home() {
 
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
         <div className="flex flex-wrap justify-center flex-row gap-4 mb-20">
-          <Card className="w-80 h-72 shadow-lg hover:shadow-xl hover:shadow-zinc-600 transition-all duration-300 bg-zinc-100">
+          <Card className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer" onClick={() => {
+            window.open("https://agriloggi.com.br", "_blank");
+          }}>
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoAgriloggi}
@@ -296,7 +298,9 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
-          <Card className="w-80 h-72 shadow-lg hover:shadow-zinc-600 transition-all duration-300 bg-zinc-100">
+          <Card className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer" onClick={() => {
+            window.open("https://www.estudemelhor.org/", "_blank");
+          }}>
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoEstudeMelhor}
@@ -325,7 +329,9 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
-          <Card className="w-80 h-72 shadow-lg hover:shadow-zinc-600 transition-all duration-300 bg-zinc-100">
+          <Card className="w-80 h-72 shadow-lg transition-all duration-300 bg-zinc-100 cursor-pointer" onClick={() => {
+            window.open("https://front-lab-if-maker-user.vercel.app/", "_blank");
+          }}>
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={labMaker}
@@ -333,7 +339,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             </CardContent>
-            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-5">
+            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-5" >
               <div className="flex flex-row gap-2">
                 <ReactOriginal size={30} color="white" />
                 <NextjsPlain size={30} color="black" />

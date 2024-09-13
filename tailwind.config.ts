@@ -12,8 +12,8 @@ const config: Config = {
     animation: {
       "move-up-and-down": "move-up-and-down 2s linear infinite",
       "grow-when-hover": "grow-when-hover 0.2 ease-in-out",
-      "breath-light-to-dark": "breath 7s ease-in-out infinite",
-      "breath-light-to-dark-2": "breath 10s ease-in-out infinite",
+      "breath-light-to-dark": "breath 8s ease-in-out infinite",
+      "breath-light-to-dark-2": "breath 8s ease-in-out infinite 4s",
     },
     extend: {
       keyframes: {
