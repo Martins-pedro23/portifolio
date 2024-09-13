@@ -94,7 +94,7 @@ export default function Home() {
         </main>
       </BackgroundVideo>
 
-      <div className="h-32 w-full absolute bottom-[-100px] left-0 z-10 bg-gradient-to-b from-transparent to-[#0a0a0a] via-[#0a0a0a] "></div>
+      <div className="h-48 w-full absolute bottom-[-100px] left-0 z-10 bg-gradient-to-b from-transparent to-[#0a0a0a] via-[#0a0a0a] "></div>
 
 
       <section
