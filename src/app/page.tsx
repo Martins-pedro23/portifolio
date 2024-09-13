@@ -55,6 +55,7 @@ const techlogiesList = [
 export default function Home() {
   return (
     <div className="flex flex-col pt-0 items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
+      
       <BackgroundVideo
         src={background}
         style={{
@@ -98,9 +99,14 @@ export default function Home() {
         </main>
       </BackgroundVideo>
 
-      <div className="h-16 w-full absolute bottom-0 left-0 z-30 bg-gradient-to-b from-transparent to-[#0a0a0a] via-[#0a0a0a] "></div>
+      <div className="h-16 w-full absolute bottom-0 left-0 z-10 bg-gradient-to-b from-transparent to-[#0a0a0a] via-[#0a0a0a] "></div>
 
-      <section id="about-me" className="flex flex-col mt-20 gap-4 w-full max-w-3xl p-5">
+
+      <section
+        id="about-me"
+        className="flex flex-col mt-20 gap-4 w-full max-w-3xl p-5"
+      >
+      
         <h2 className="text-2xl font-bold">Sobre mim</h2>
         <p className="text-md text-justify hyphens-auto">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
@@ -118,55 +124,18 @@ export default function Home() {
 
         <h2 className="text-2xl font-bold pt-20">Tecnologias</h2>
         <div className="flex justify-center flex-col">
-          <div className="flex items-center justify-center gap-4 my-4">
-            <HoverCard>
-              <HoverCardTrigger>
-                <NextjsPlain size={60} color="white" />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-30">
-                <p className="text-center">Next.js</p>
-              </HoverCardContent>
-            </HoverCard>
-            <HoverCard>
-              <HoverCardTrigger>
-                <PostgresqlPlain size={60} color="white" />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-30">
-                <p className="text-center">PostreSQL</p>
-              </HoverCardContent>
-            </HoverCard>
-            <HoverCard>
-              <HoverCardTrigger>
-                <ReactOriginal size={60} color="white" />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-30">
-                <p className="text-center">React</p>
-              </HoverCardContent>
-            </HoverCard>
-            <HoverCard>
-              <HoverCardTrigger>
-                <NestjsOriginal color="white" size={60} />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-30">
-                <p className="text-center">Nest.js</p>
-              </HoverCardContent>
-            </HoverCard>
-            <HoverCard>
-              <HoverCardTrigger>
-                <JavaPlain color="white" size={60} />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-30">
-                <p className="text-center">Java</p>
-              </HoverCardContent>
-            </HoverCard>
-            <HoverCard>
-              <HoverCardTrigger>
-                <NodejsOriginal color="white" size={60} />
-              </HoverCardTrigger>
-              <HoverCardContent className="w-30">
-                <p className="text-center">Node.js</p>
-              </HoverCardContent>
-            </HoverCard>
+          <div className="flex flex-wrap items-center justify-center gap-4 my-4">
+            <NextjsPlain size={60} color="white" />
+
+            <PostgresqlPlain size={60} color="white" />
+
+            <ReactOriginal size={60} color="white" />
+
+            <NestjsOriginal color="white" size={60} />
+
+            <JavaPlain color="white" size={60} />
+
+            <NodejsOriginal color="white" size={60} />
           </div>
           <p className="text-sm text-center">
             As tecnologias que eu mais utilizo no momento
@@ -285,24 +254,24 @@ export default function Home() {
 
         <h2 className="text-2xl font-bold pt-20">Idiomas</h2>
         <div className="grid grid-cols-3  sm:grid-cols-6 gap-4 w-full items-center">
-            <span className="bg-zinc-800 px-2 py-1  rounded-md hover:bg-zinc-700 select-none text-center">
-              Inglês
-            </span>
-            <Progress
-              value={95}
-              className="w-full h-2 sm:col-span-4"
-              style={{ backgroundColor: "white" }}
-            />
-            <span className=" text-sm select-none">avançado</span>
-            <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none text-center">
-              Espanhol
-            </span>
-            <Progress
-              value={30}
-              className="w-full h-2 sm:col-span-4"
-              style={{ backgroundColor: "white" }}
-            />
-            <span className=" text-sm select-none">básico</span>
+          <span className="bg-zinc-800 px-2 py-1  rounded-md hover:bg-zinc-700 select-none text-center">
+            Inglês
+          </span>
+          <Progress
+            value={95}
+            className="w-full h-2 sm:col-span-4"
+            style={{ backgroundColor: "white" }}
+          />
+          <span className=" text-sm select-none">avançado</span>
+          <span className="bg-zinc-800 px-2 py-1 rounded-md hover:bg-zinc-700 select-none text-center">
+            Espanhol
+          </span>
+          <Progress
+            value={30}
+            className="w-full h-2 sm:col-span-4"
+            style={{ backgroundColor: "white" }}
+          />
+          <span className=" text-sm select-none">básico</span>
         </div>
 
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
@@ -389,8 +358,9 @@ export default function Home() {
           </Card>
         </div>
       </section>
+        <div className="z-0 bg-red-600 absolute top-0 left-0 w-full h-full"></div>
 
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center p-3 justify-center fixed bottom-0 backdrop-blur bg-[#0a0a0ab9] w-full h-20">
+      <footer className="row-start-3 z-20 flex gap-6 flex-wrap items-center p-3 justify-center fixed bottom-0 backdrop-blur bg-[#0a0a0ab9] w-full h-20">
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://www.linkedin.com/in/joão-pedro-martins-de-oliveira-969712272"
