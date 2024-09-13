@@ -108,7 +108,7 @@ export default function Home() {
       >
       
         <h2 className="text-2xl font-bold">Sobre mim</h2>
-        <p className="text-md text-justify hyphens-auto">
+        <p className="text-md text-justify hyphens-auto shadow-xl">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
           Itapetinga. Sempre fui apaixonado por tecnologia, e comecei a
           programar cedo para criar mods para o Minecraft. Neste processo,
@@ -358,7 +358,7 @@ export default function Home() {
           </Card>
         </div>
       </section>
-        <div className="z-0 bg-red-600 absolute top-0 left-0 w-full h-full"></div>
+        
 
       <footer className="row-start-3 z-20 flex gap-6 flex-wrap items-center p-3 justify-center fixed bottom-0 backdrop-blur bg-[#0a0a0ab9] w-full h-20">
         <Link
