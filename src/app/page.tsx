@@ -21,11 +21,6 @@ import BackgroundVideo from "next-video/background-video";
 import logoAgriloggi from "./public/images/agriloggiLogo.png";
 import logoEstudeMelhor from "./public/images/logoEstudeMelhor.svg";
 import labMaker from "./public/images/LabIFMaker4.png";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
