@@ -1,7 +1,15 @@
 "use client";
 
 import { TypeAnimation } from "react-type-animation";
-import { Linkedin, Github, Mail, ChevronDown, Link2 } from "lucide-react";
+import {
+  Linkedin,
+  Github,
+  Mail,
+  ChevronDown,
+  Link2,
+  Phone,
+  Instagram,
+} from "lucide-react";
 import {
   NextjsPlain,
   NestjsOriginal,
@@ -26,6 +34,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import useMediaQuery from "@/app/hooks/useMediaQuery";
 
 const techlogiesList = [
   "Nest.js",
@@ -48,9 +74,10 @@ const techlogiesList = [
 ];
 
 export default function Home() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <div className="flex flex-col pt-0 items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
-      
       <BackgroundVideo
         src={background}
         style={{
@@ -96,12 +123,10 @@ export default function Home() {
 
       <div className="h-28 w-full absolute bottom-[-60px] left-0 z-10 bg-gradient-to-b from-transparent to-[#0a0a0a] via-[#0a0a0a]  "></div>
 
-
       <section
         id="about-me"
         className="flex flex-col mt-20 gap-4 w-full max-w-3xl p-5"
       >
-      
         <h2 className="text-2xl font-bold">Sobre mim</h2>
         <p className="text-md text-justify hyphens-auto drop-shadow-xl">
           Sou estudante de Informática no Instituto Federal de São Paulo, Campus
@@ -271,9 +296,12 @@ export default function Home() {
 
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
         <div className="flex flex-wrap justify-center flex-row gap-4 mb-20">
-          <Card className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer" onClick={() => {
-            window.open("https://agriloggi.com.br", "_blank");
-          }}>
+          <Card
+            className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer"
+            onClick={() => {
+              window.open("https://agriloggi.com.br", "_blank");
+            }}
+          >
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoAgriloggi}
@@ -298,9 +326,12 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
-          <Card className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer" onClick={() => {
-            window.open("https://www.estudemelhor.org/", "_blank");
-          }}>
+          <Card
+            className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer"
+            onClick={() => {
+              window.open("https://www.estudemelhor.org/", "_blank");
+            }}
+          >
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={logoEstudeMelhor}
@@ -329,9 +360,15 @@ export default function Home() {
               </Link>
             </CardFooter>
           </Card>
-          <Card className="w-80 h-72 shadow-lg transition-all duration-300 bg-zinc-100 cursor-pointer" onClick={() => {
-            window.open("https://front-lab-if-maker-user.vercel.app/", "_blank");
-          }}>
+          <Card
+            className="w-80 h-72 shadow-lg transition-all duration-300 bg-zinc-100 cursor-pointer"
+            onClick={() => {
+              window.open(
+                "https://front-lab-if-maker-user.vercel.app/",
+                "_blank"
+              );
+            }}
+          >
             <CardContent className="flex items-center justify-center pt-10">
               <Image
                 src={labMaker}
@@ -339,7 +376,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
             </CardContent>
-            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-5" >
+            <CardFooter className="flex flex-col gap-5 items-center justify-end mt-5">
               <div className="flex flex-row gap-2">
                 <ReactOriginal size={30} color="white" />
                 <NextjsPlain size={30} color="black" />
@@ -359,9 +396,8 @@ export default function Home() {
           </Card>
         </div>
       </section>
-        
 
-      <footer className="row-start-3 z-20 flex gap-6 flex-wrap items-center p-3 justify-center fixed bottom-0 backdrop-blur bg-[#0a0a0ab9] w-full h-20">
+      <footer className="z-20 flex gap-6 flex-wrap items-center p-2 justify-center fixed bottom-0 backdrop-blur bg-[#0a0a0ab9] w-full h-20">
         <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://www.linkedin.com/in/joão-pedro-martins-de-oliveira-969712272"
@@ -380,15 +416,101 @@ export default function Home() {
           <Github />
           Github
         </Link>
-        <Link
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="mailto:martinsdeoliveira.pedro2@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Mail />
-          Email
-        </Link>
+
+        {isDesktop ? (
+          <Dialog>
+            <DialogTrigger>
+              <div className="flex items-center gap-2 hover:underline hover:underline-offset-4">
+                <Mail />
+                Contato
+              </div>
+            </DialogTrigger>
+            <DialogContent className="bg-zinc-950">
+              <DialogHeader>
+                <DialogTitle>
+                  <div className="flex justify-center content-center w-full">
+                    <div className="flex flex-col gap-4 w-3/5">
+                      <h1 className="text-2xl font-bold text-center mb-5">
+                        Meus contatos
+                      </h1>
+                    </div>
+                  </div>
+                </DialogTitle>
+                <DialogDescription>
+                  <div className="flex justify-center content-center w-full mb-10 mx-3">
+                    <div className="flex flex-col gap-4 w-full sm:w-3/5">
+                      <div className="flex flex-row gap-2 items-center w-full">
+                        <Phone />
+                        <span className="text-sm text-[#ededed]">
+                          (15) 99705-4050
+                        </span>
+                      </div>
+                      <div className="flex flex-row gap-2 items-center w-full">
+                        <Mail />
+                        <span className="text-sm text-[#ededed]">
+                          martinsdeoliveira.pedro2@gmail.com
+                        </span>
+                      </div>
+                      <div className="flex flex-row gap-2 items-center w-full">
+                        <Instagram />
+                        <span className="text-sm text-[#ededed]">
+                          @jp_martins.23
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+        ) : (
+          <Drawer>
+            <DrawerTrigger>
+              <div className="flex items-center gap-2 hover:underline hover:underline-offset-4">
+                <Mail />
+                Contato
+              </div>
+            </DrawerTrigger>
+            <DrawerContent className="bg-zinc-950">
+              <DrawerHeader>
+                <DrawerTitle>
+                  <div className="flex justify-center content-center w-full">
+                    <div className="flex flex-col gap-4 w-3/5">
+                      <h1 className="text-2xl font-bold text-center mb-5">
+                        Meus contatos
+                      </h1>
+                    </div>
+                  </div>
+                </DrawerTitle>
+                <DrawerDescription>
+                  <div className="flex justify-center content-center w-full mb-10 mx-3">
+                    <div className="flex flex-col gap-4 w-full sm:w-3/5">
+                      <div className="flex flex-row gap-2 items-center w-full">
+                        <Phone />
+                        <span className="text-sm text-[#ededed]">
+                          (15) 99705-4050
+                        </span>
+                      </div>
+                      <div className="flex flex-row gap-2 items-center w-full">
+                        <Mail />
+                        <span className="text-sm text-[#ededed]">
+                          martinsdeoliveira.pedro2@gmail.com
+                        </span>
+                      </div>
+                      <div className="flex flex-row gap-2 items-center w-full">
+                        <Instagram />
+                        <span className="text-sm text-[#ededed]">
+                          @jp_martins.23
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </DrawerDescription>
+              </DrawerHeader>
+              <DrawerFooter></DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        )}
       </footer>
     </div>
   );
