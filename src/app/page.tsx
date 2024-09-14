@@ -296,8 +296,8 @@ export default function Home() {
 
         <h2 className="text-2xl font-bold pt-20">Meus projetos</h2>
         <div className="flex flex-wrap justify-center flex-row gap-4 mb-20">
-          <Card
-            className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer"
+          <div
+            className="w-80 h-72 bg-[#e2e2e2bb] cursor-pointer rounded-xl border-[0.5px] border-white shadow-2xl"
             onClick={() => {
               window.open("https://agriloggi.com.br", "_blank");
             }}
@@ -325,9 +325,9 @@ export default function Home() {
                 <p className="text-xl text-center font-bold">Agriloggi</p>
               </Link>
             </CardFooter>
-          </Card>
-          <Card
-            className="w-80 h-72 shadow-lg  transition-all duration-300 bg-zinc-100 cursor-pointer"
+          </div>
+          <div
+            className="w-80 h-72 bg-[#e2e2e2bb] cursor-pointer rounded-xl border-[0.5px] border-white shadow-2xl"
             onClick={() => {
               window.open("https://www.estudemelhor.org/", "_blank");
             }}
@@ -359,9 +359,9 @@ export default function Home() {
                 </p>
               </Link>
             </CardFooter>
-          </Card>
-          <Card
-            className="w-80 h-72 shadow-lg transition-all duration-300 bg-zinc-100 cursor-pointer"
+          </div>
+          <div
+            className="w-80 h-72 bg-[#e2e2e2bb] cursor-pointer rounded-xl border-[0.5px] border-white shadow-2xl"
             onClick={() => {
               window.open(
                 "https://front-lab-if-maker-user.vercel.app/",
@@ -387,13 +387,13 @@ export default function Home() {
                 target="_blank"
                 className="flex items-center gap-2"
               >
-                <Link2 />
-                <p className="text-xl text-center w-full font-bold">
+                <Link2 color="black" />
+                <p className="text-xl text-center w-full font-bold text-black">
                   Lab Maker
                 </p>
               </Link>
             </CardFooter>
-          </Card>
+          </div>
         </div>
       </section>
 
