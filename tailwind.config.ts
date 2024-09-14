@@ -14,6 +14,7 @@ const config: Config = {
       "grow-when-hover": "grow-when-hover 0.2 ease-in-out",
       "breath-light-to-dark": "breath 8s ease-in-out infinite",
       "breath-light-to-dark-2": "breath 8s ease-in-out infinite 4s",
+      "move-up-and-down-2": "move-up-and-down 2s linear infinite 4s",
     },
     extend: {
       keyframes: {
@@ -39,12 +40,15 @@ const config: Config = {
         breath: {
           "0%": {
             opacity: "0.3",
+			transform: "translateY(0) rotate(12deg)",
           },
           "50%": {
             opacity: "0.75",
+			transform: "translateY(-10px) rotate(12deg)",
           },
           "100%": {
             opacity: "0.3",
+			transform: "translateY(0) rotate(12deg)",
           },
         },
       },

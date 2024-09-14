@@ -30,11 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="absolute z-20 rotate-12 animate-breath-light-to-dark bottom-[-500px] right-20 w-72 h-72 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
-        <div className="absolute z-20 rotate-12 animate-breath-light-to-dark-2 bottom-[-750px] sm:bottom-[-600px] right-20 w-48 h-48 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
-        <div className="absolute z-20 rotate-12 animate-breath-light-to-dark bottom-[-1200px]  left-0 w-72 h-72  sm:w-96 sm:h-96 bg-gradient-to-tr from-[#ffffff63] to-transparent opacity-50 rounded-lg"></div>
-        <div className="absolute z-20 rotate-6 animate-breath-light-to-dark-2 bottom-[-2000px]  sm:bottom-[-600px] left-20 w-20 h-20 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
-        <div className="absolute z-20 rotate-6 animate-breath-light-to-dark bottom-[-1800px] right-20 w-36 h-36 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
+        <div className="absolute z-20  animate-breath-light-to-dark  bottom-[-500px] right-20 w-72 h-72 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
+        <div className="absolute z-20  animate-breath-light-to-dark-2 bottom-[-750px] sm:bottom-[-600px] right-20 w-48 h-48 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
+        <div className="absolute z-20  animate-breath-light-to-dark bottom-[-1200px]  left-0 w-72 h-72  sm:w-96 sm:h-96 bg-gradient-to-tr from-[#ffffff63] to-transparent opacity-50 rounded-lg"></div>
+        <div className="absolute z-20  animate-breath-light-to-dark-2 bottom-[-2000px]  sm:bottom-[-600px] left-20 w-20 h-20 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
+        <div className="absolute z-20  animate-breath-light-to-dark bottom-[-1800px] right-20 w-36 h-36 bg-gradient-to-br from-[#ffffffa1] to-transparent opacity-50 rounded-lg"></div>
         {children}
       </body>
     </html>
